@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  
+    <appSettings/>
+    
+      <connectionStrings>
+        
+          <add name="ConString" connectionString="Data Source=(local); Initial Catalog=AjaxTalent; user id=sa; pwd=sa" providerName="System.Data.SqlClient;"/>
+            
+      </connectionStrings>
+      
+        <system.web>
+          
+            
+              <authentication mode="Forms">
+                
+                  <forms name=".authenASPX" loginUrl="login.aspx" timeout="30" protection="All" ></forms>
+                      
+              </authentication>
+              
+                
+                  <httpModules>
+                    
+                      <add name="MemberShip" type="MemberShip"/>
+                          
+                  </httpModules>
+                   
+        </system.web>
+        
+          <location path="Manager">
+            
+              <system.web>
+                
+                  <globalization fileEncoding="utf-8" requestEncoding="utf-8" responseEncoding="utf-8" culture="zh-CN"/>
+                  
+                    <authorization>
+                      
+                        <allow roles="admin"/>
+                        
+                          <deny users="*"/>
+                                
+                    </authorization>
+                        
+              </system.web>
+                
+          </location>
+
+</configuration>
